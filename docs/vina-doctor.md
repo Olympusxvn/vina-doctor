@@ -2,10 +2,11 @@
 
 ## 1. Thiết lập môi trường (Backend - FastAPI)
 
-Đầu tiên, bạn cần cài đặt thư viện chính thức của DashScope. Nếu bạn dùng Python cho ai_engine:
+Dự án sử dụng [uv](https://docs.astral.sh/uv/) làm Python package manager.
 
 ```bash
-pip install dashscope
+uv init
+uv add dashscope
 ```
 
 ## 2. Triển khai Code mẫu (The "Heart" of Scribe)
