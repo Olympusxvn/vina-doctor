@@ -99,6 +99,12 @@ Khi kết thúc cuộc khám, bạn gửi toàn bộ file audio (hoặc bản tr
 - **Mục tiêu:** Trích xuất JSON y khoa chuẩn (Clinical Correctness).
 - **Prompt nâng cao:** "Dựa vào toàn bộ cuộc hội thoại, hãy điền vào mẫu SOAP, tìm mã ICD-10 và kiểm tra xem liều lượng thuốc có gì bất thường không."
 
+3. Lưu ý quan trọng về Data Residency (Bảo mật)
+Vì đây là Healthcare, giám khảo có thể hỏi về việc dữ liệu đi đâu. Khi dùng DashScope:
+Region: Nếu có thể, hãy chọn Region gần Việt Nam nhất (như Singapore hoặc Hong Kong) để giảm độ trễ (Latency).
+Encryption: Nhấn mạnh rằng dữ liệu truyền lên API qua HTTPS và Alibaba Cloud có các chứng chỉ bảo mật (như ISO/IEC 27001).
+  
+4. Code "Bỏ túi" để lấy cấu trúc JSON chuẩn
 Khi gọi DashScope, hãy ép AI trả về JSON ngay trong Prompt để Backend của bạn không bị "crash":
 
 ```python
