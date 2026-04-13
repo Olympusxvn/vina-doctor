@@ -6,4 +6,23 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "dashscope>=1.25.16",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "python-dotenv>=1.0.0",
+    "python-multipart>=0.0.9",
 ]
+
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+# The ai_engine/ dir IS the Python package; its parent is the import root.
+package-dir = {"" = ".."}
+packages = ["ai_engine"]
+
+[tool.hatch.build.targets.wheel]
+# The ai_engine/ directory sits inside the repo root; point hatchling one level
+# up so that "ai_engine" is a proper importable package (not a flat namespace).
+packages = ["../ai_engine"]
+
